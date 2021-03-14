@@ -15,8 +15,8 @@ class App extends Component {
 
 class Screen extends Component {
    constructor(props){
-     super()
-     this.state = { messages : []}
+     super();
+     this.state = { messages : []};
      this.getMessages = this.getMessages.bind(this);
    }
 
@@ -52,7 +52,7 @@ class Screen extends Component {
     const msgs = this.state.messages;
     const html = [];
 
-    for (let i = 0; i < msgs.length; i += 1){
+    for (let i = 0; i < msgs.length; i++){
       html.push(<div key={`msg${i}`} className="message-container">
         <div className="user">{msgs[i]['created_by']}</div>
         <div className="message">{msgs[i]['message']}</div>
@@ -67,13 +67,11 @@ class Screen extends Component {
   }
 }
 
-
 class Input extends Component {
     constructor(props) {
       super();
       this.onEnter = this.onEnter.bind(this);
     }
-
 
   //Render ()
   onEnter(e){
@@ -110,18 +108,5 @@ class Input extends Component {
   }
 
 }
-
-//Add ids to the boxes
-
-
-// Let's make a new component called Row that renders 3 Box components.
-
-// Pull the state out of each Box and into the higher level Row component.
-
-//     Don't forget to pass each child Box a key property.
-
-//Rig up the event handling so that clicks on a Box component change the state on their parent Row component.
-
-
 
 render(<App />, document.querySelector('#root'));
